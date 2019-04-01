@@ -69805,7 +69805,7 @@ var _Stamen = _interopRequireDefault(require("ol/source/Stamen.js"));
 
 var _style = require("ol/style.js");
 
-var _Select = _interopRequireDefault(require("ol/interaction/Select.js"));
+var _Overlay = _interopRequireDefault(require("ol/Overlay.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -69881,17 +69881,30 @@ var map = new _ol2.Map({
     zoom: 9
   })
 });
+/*var featureListener = function ( event, name ) {
+    console.log(name);
+};*/
 
-var featureListener = function featureListener(event, name) {
-  console.log(name);
-};
-
+var infoWindow = new _Overlay.default({
+  element: document.getElementById('popup')
+});
+map.addOverlay(infoWindow);
 map.on('click', function (event) {
+  var el = infoWindow.getElement();
+  $(el).popover('destroy');
   map.forEachFeatureAtPixel(event.pixel, function (feature, layer) {
-    featureListener(event, feature.values_.note); //pass is the name of the point
+    var coordinate = event.coordinate;
+    infoWindow.setPosition(coordinate);
+    $(el).popover({
+      placement: 'top',
+      animation: false,
+      html: true,
+      content: feature.values_.note
+    });
+    $(el).popover('show'); //featureListener(event, feature.values_.note); //pass is the name of the point
   });
 });
-},{"ol/ol.css":"node_modules/ol/ol.css","ol/proj":"node_modules/ol/proj.js","ol":"node_modules/ol/index.js","ol/source/OSM":"node_modules/ol/source/OSM.js","ol/Feature.js":"node_modules/ol/Feature.js","ol/geom.js":"node_modules/ol/geom.js","ol/layer.js":"node_modules/ol/layer.js","ol/source.js":"node_modules/ol/source.js","ol/source/Stamen.js":"node_modules/ol/source/Stamen.js","ol/style.js":"node_modules/ol/style.js","ol/interaction/Select.js":"node_modules/ol/interaction/Select.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"ol/ol.css":"node_modules/ol/ol.css","ol/proj":"node_modules/ol/proj.js","ol":"node_modules/ol/index.js","ol/source/OSM":"node_modules/ol/source/OSM.js","ol/Feature.js":"node_modules/ol/Feature.js","ol/geom.js":"node_modules/ol/geom.js","ol/layer.js":"node_modules/ol/layer.js","ol/source.js":"node_modules/ol/source.js","ol/source/Stamen.js":"node_modules/ol/source/Stamen.js","ol/style.js":"node_modules/ol/style.js","ol/Overlay.js":"node_modules/ol/Overlay.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

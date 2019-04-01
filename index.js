@@ -8,7 +8,7 @@ import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer.js';
 import {TileJSON, Vector as VectorSource} from 'ol/source.js';
 import Stamen from 'ol/source/Stamen.js';
 import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style.js';
-import SelectFeature from 'ol/interaction/Select.js';
+import Overlay from 'ol/Overlay.js';
 
 var deploymentLocs = [
 	{
@@ -83,13 +83,29 @@ var map = new Map({
   })
 });
 
-var featureListener = function ( event, name ) {
+/*var featureListener = function ( event, name ) {
     console.log(name);
-};
+};*/
+
+var infoWindow = new Overlay({
+	element: document.getElementById('popup')
+});
+map.addOverlay(infoWindow);
 
 map.on('click', function(event) {
+	var el = infoWindow.getElement();
+	$(el).popover('destroy');
     map.forEachFeatureAtPixel(event.pixel, function(feature,layer) {
-         featureListener(event, feature.values_.note); //pass is the name of the point
+		var coordinate = event.coordinate;
+		infoWindow.setPosition(coordinate);
+		$(el).popover({
+			placement: 'top',
+			animation: false,
+			html: true,
+			content: feature.values_.note
+		});
+		$(el).popover('show');
+		//featureListener(event, feature.values_.note); //pass is the name of the point
         
     });
 });
