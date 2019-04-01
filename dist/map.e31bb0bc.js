@@ -69686,7 +69686,103 @@ var _XYZ = _interopRequireDefault(require("./source/XYZ.js"));
 var _Zoomify = _interopRequireDefault(require("./source/Zoomify.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-},{"./source/BingMaps.js":"node_modules/ol/source/BingMaps.js","./source/CartoDB.js":"node_modules/ol/source/CartoDB.js","./source/Cluster.js":"node_modules/ol/source/Cluster.js","./source/Image.js":"node_modules/ol/source/Image.js","./source/ImageArcGISRest.js":"node_modules/ol/source/ImageArcGISRest.js","./source/ImageCanvas.js":"node_modules/ol/source/ImageCanvas.js","./source/ImageMapGuide.js":"node_modules/ol/source/ImageMapGuide.js","./source/ImageStatic.js":"node_modules/ol/source/ImageStatic.js","./source/ImageWMS.js":"node_modules/ol/source/ImageWMS.js","./source/OSM.js":"node_modules/ol/source/OSM.js","./source/Raster.js":"node_modules/ol/source/Raster.js","./source/Source.js":"node_modules/ol/source/Source.js","./source/Stamen.js":"node_modules/ol/source/Stamen.js","./source/Tile.js":"node_modules/ol/source/Tile.js","./source/TileArcGISRest.js":"node_modules/ol/source/TileArcGISRest.js","./source/TileDebug.js":"node_modules/ol/source/TileDebug.js","./source/TileImage.js":"node_modules/ol/source/TileImage.js","./source/TileJSON.js":"node_modules/ol/source/TileJSON.js","./source/TileWMS.js":"node_modules/ol/source/TileWMS.js","./source/UrlTile.js":"node_modules/ol/source/UrlTile.js","./source/UTFGrid.js":"node_modules/ol/source/UTFGrid.js","./source/Vector.js":"node_modules/ol/source/Vector.js","./source/VectorTile.js":"node_modules/ol/source/VectorTile.js","./source/WMTS.js":"node_modules/ol/source/WMTS.js","./source/XYZ.js":"node_modules/ol/source/XYZ.js","./source/Zoomify.js":"node_modules/ol/source/Zoomify.js"}],"index.js":[function(require,module,exports) {
+},{"./source/BingMaps.js":"node_modules/ol/source/BingMaps.js","./source/CartoDB.js":"node_modules/ol/source/CartoDB.js","./source/Cluster.js":"node_modules/ol/source/Cluster.js","./source/Image.js":"node_modules/ol/source/Image.js","./source/ImageArcGISRest.js":"node_modules/ol/source/ImageArcGISRest.js","./source/ImageCanvas.js":"node_modules/ol/source/ImageCanvas.js","./source/ImageMapGuide.js":"node_modules/ol/source/ImageMapGuide.js","./source/ImageStatic.js":"node_modules/ol/source/ImageStatic.js","./source/ImageWMS.js":"node_modules/ol/source/ImageWMS.js","./source/OSM.js":"node_modules/ol/source/OSM.js","./source/Raster.js":"node_modules/ol/source/Raster.js","./source/Source.js":"node_modules/ol/source/Source.js","./source/Stamen.js":"node_modules/ol/source/Stamen.js","./source/Tile.js":"node_modules/ol/source/Tile.js","./source/TileArcGISRest.js":"node_modules/ol/source/TileArcGISRest.js","./source/TileDebug.js":"node_modules/ol/source/TileDebug.js","./source/TileImage.js":"node_modules/ol/source/TileImage.js","./source/TileJSON.js":"node_modules/ol/source/TileJSON.js","./source/TileWMS.js":"node_modules/ol/source/TileWMS.js","./source/UrlTile.js":"node_modules/ol/source/UrlTile.js","./source/UTFGrid.js":"node_modules/ol/source/UTFGrid.js","./source/Vector.js":"node_modules/ol/source/Vector.js","./source/VectorTile.js":"node_modules/ol/source/VectorTile.js","./source/WMTS.js":"node_modules/ol/source/WMTS.js","./source/XYZ.js":"node_modules/ol/source/XYZ.js","./source/Zoomify.js":"node_modules/ol/source/Zoomify.js"}],"node_modules/ol/style.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Atlas", {
+  enumerable: true,
+  get: function () {
+    return _Atlas.default;
+  }
+});
+Object.defineProperty(exports, "AtlasManager", {
+  enumerable: true,
+  get: function () {
+    return _AtlasManager.default;
+  }
+});
+Object.defineProperty(exports, "Circle", {
+  enumerable: true,
+  get: function () {
+    return _Circle.default;
+  }
+});
+Object.defineProperty(exports, "Fill", {
+  enumerable: true,
+  get: function () {
+    return _Fill.default;
+  }
+});
+Object.defineProperty(exports, "Icon", {
+  enumerable: true,
+  get: function () {
+    return _Icon.default;
+  }
+});
+Object.defineProperty(exports, "IconImage", {
+  enumerable: true,
+  get: function () {
+    return _IconImage.default;
+  }
+});
+Object.defineProperty(exports, "Image", {
+  enumerable: true,
+  get: function () {
+    return _Image.default;
+  }
+});
+Object.defineProperty(exports, "RegularShape", {
+  enumerable: true,
+  get: function () {
+    return _RegularShape.default;
+  }
+});
+Object.defineProperty(exports, "Stroke", {
+  enumerable: true,
+  get: function () {
+    return _Stroke.default;
+  }
+});
+Object.defineProperty(exports, "Style", {
+  enumerable: true,
+  get: function () {
+    return _Style.default;
+  }
+});
+Object.defineProperty(exports, "Text", {
+  enumerable: true,
+  get: function () {
+    return _Text.default;
+  }
+});
+
+var _Atlas = _interopRequireDefault(require("./style/Atlas.js"));
+
+var _AtlasManager = _interopRequireDefault(require("./style/AtlasManager.js"));
+
+var _Circle = _interopRequireDefault(require("./style/Circle.js"));
+
+var _Fill = _interopRequireDefault(require("./style/Fill.js"));
+
+var _Icon = _interopRequireDefault(require("./style/Icon.js"));
+
+var _IconImage = _interopRequireDefault(require("./style/IconImage.js"));
+
+var _Image = _interopRequireDefault(require("./style/Image.js"));
+
+var _RegularShape = _interopRequireDefault(require("./style/RegularShape.js"));
+
+var _Stroke = _interopRequireDefault(require("./style/Stroke.js"));
+
+var _Style = _interopRequireDefault(require("./style/Style.js"));
+
+var _Text = _interopRequireDefault(require("./style/Text.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+},{"./style/Atlas.js":"node_modules/ol/style/Atlas.js","./style/AtlasManager.js":"node_modules/ol/style/AtlasManager.js","./style/Circle.js":"node_modules/ol/style/Circle.js","./style/Fill.js":"node_modules/ol/style/Fill.js","./style/Icon.js":"node_modules/ol/style/Icon.js","./style/IconImage.js":"node_modules/ol/style/IconImage.js","./style/Image.js":"node_modules/ol/style/Image.js","./style/RegularShape.js":"node_modules/ol/style/RegularShape.js","./style/Stroke.js":"node_modules/ol/style/Stroke.js","./style/Style.js":"node_modules/ol/style/Style.js","./style/Text.js":"node_modules/ol/style/Text.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("ol/ol.css");
@@ -69707,10 +69803,71 @@ var _source = require("ol/source.js");
 
 var _Stamen = _interopRequireDefault(require("ol/source/Stamen.js"));
 
+var _style = require("ol/style.js");
+
+var _Select = _interopRequireDefault(require("ol/interaction/Select.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var pace = (0, _proj.fromLonLat)([-73.80823, 41.12731]);
-var pointFeature = new _Feature.default(new _geom.Point(pace));
+var deploymentLocs = [{
+  'gps': [-73.80823, 41.12731],
+  'dep': 2,
+  'name': 'Ada'
+}, {
+  'gps': [-73.723518, 41.736051],
+  'dep': 4,
+  'name': 'leanne'
+}, {
+  'gps': [-73.696475, 41.611607],
+  'dep': 5,
+  'name': 'jewel'
+}];
+var pace = (0, _proj.fromLonLat)([-73.80823, 41.12731]); //var pointFeature = new Feature(new Point(pace));
+
+var features = new Array();
+
+for (var i = 0; i < deploymentLocs.length; i++) {
+  //loop through deployments
+  features[i] = new _Feature.default({
+    'geometry': new _geom.Point((0, _proj.fromLonLat)(deploymentLocs[i].gps)),
+    //grab gps location and tranlate it into meters from some spot off the coast of west africa
+    'size': new _style.Style({
+      image: new _style.Circle({
+        radius: 8,
+        fill: new _style.Fill({
+          color: '#79AFF5'
+        }),
+        stroke: new _style.Stroke({
+          color: '#666666',
+          width: 1
+        })
+      })
+    }),
+    'note': deploymentLocs[i].name
+  });
+}
+/*var features = [new Feature({
+	'geometry': new Point(pace),
+	'size': new Style({
+        image: new CircleStyle({
+			radius: 10,
+            fill: new Fill({color: '#666666'}),
+            stroke: new Stroke({color: '#bada55', width: 1})
+        })
+	}),
+})];*/
+
+
+var vectorSource = new _source.Vector({
+  features: features,
+  wrapX: false
+});
+var vector = new _layer.Vector({
+  source: vectorSource,
+  style: function style(feature) {
+    return feature.get('size');
+  }
+});
 var map = new _ol2.Map({
   target: 'map',
   //this prints the map in the div with id map
@@ -69718,17 +69875,23 @@ var map = new _ol2.Map({
     source: new _Stamen.default({
       layer: 'terrain'
     })
-  }), new _layer.Vector({
-    source: new _source.Vector({
-      features: [pointFeature]
-    })
-  })],
+  }), vector],
   view: new _ol2.View({
     center: pace,
-    zoom: 10
+    zoom: 9
   })
 });
-},{"ol/ol.css":"node_modules/ol/ol.css","ol/proj":"node_modules/ol/proj.js","ol":"node_modules/ol/index.js","ol/source/OSM":"node_modules/ol/source/OSM.js","ol/Feature.js":"node_modules/ol/Feature.js","ol/geom.js":"node_modules/ol/geom.js","ol/layer.js":"node_modules/ol/layer.js","ol/source.js":"node_modules/ol/source.js","ol/source/Stamen.js":"node_modules/ol/source/Stamen.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+var featureListener = function featureListener(event, name) {
+  console.log(name);
+};
+
+map.on('click', function (event) {
+  map.forEachFeatureAtPixel(event.pixel, function (feature, layer) {
+    featureListener(event, feature.values_.note); //pass is the name of the point
+  });
+});
+},{"ol/ol.css":"node_modules/ol/ol.css","ol/proj":"node_modules/ol/proj.js","ol":"node_modules/ol/index.js","ol/source/OSM":"node_modules/ol/source/OSM.js","ol/Feature.js":"node_modules/ol/Feature.js","ol/geom.js":"node_modules/ol/geom.js","ol/layer.js":"node_modules/ol/layer.js","ol/source.js":"node_modules/ol/source.js","ol/source/Stamen.js":"node_modules/ol/source/Stamen.js","ol/style.js":"node_modules/ol/style.js","ol/interaction/Select.js":"node_modules/ol/interaction/Select.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -69756,7 +69919,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50775" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53473" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
