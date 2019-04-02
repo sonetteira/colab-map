@@ -43,7 +43,8 @@ for (var i = 0; i<deploymentLocs.length; i++) { //loop through deployments
 				stroke: new Stroke({color: '#666666', width: 1})
 			})
 		}),
-		'note': deploymentLocs[i].name,
+		'note': deploymentLocs[i].dep + ': ' + deploymentLocs[i].name,
+		'id': deploymentLocs[i].dep
 	});
 }
 
@@ -92,7 +93,7 @@ var infoWindow = new Overlay({
 });
 map.addOverlay(infoWindow);
 
-map.on('click', function(event) {
+map.on('pointermove', function(event) {
 	var el = infoWindow.getElement();
 	$(el).popover('destroy');
     map.forEachFeatureAtPixel(event.pixel, function(feature,layer) {
@@ -107,5 +108,11 @@ map.on('click', function(event) {
 		$(el).popover('show');
 		//featureListener(event, feature.values_.note); //pass is the name of the point
         
+    });
+});
+
+map.on('click', function(event) {
+    map.forEachFeatureAtPixel(event.pixel, function(feature,layer) {
+		console.log('set session variable depid to ' + feature.values_.id);
     });
 });
