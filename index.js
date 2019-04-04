@@ -113,7 +113,7 @@ map.on('pointermove', function(event) {
 			placement: 'top',
 			animation: false,
 			html: true,
-			content: feature.values_.name
+			content: feature.values_.note
 		});
 		$(el).popover('show');
 		//featureListener(event, feature.values_.note); //pass is the name of the point
@@ -137,6 +137,7 @@ map.on('click', function(event) {
 		});
 		$(el).popover('show');
 		//featureListener(event, feature.values_.note); //pass is the name of the point
-        
+        document.getElementById("next").innerHTML = 'See more for ' + feature.values_.name;
+		document.getElementById("next").className = '';
     });
 });
