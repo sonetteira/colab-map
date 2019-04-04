@@ -14,17 +14,26 @@ var deploymentLocs = [
 	{
 		'gps': [-73.80823,41.12731],
 		'dep': 2,
-		'name': 'Ada'
+		'name': 'Ada',
+		'desc': 'Ada is the first sensor platform deployed in choate pond at Pace University'
 	},
 	{
 		'gps': [-73.723518,41.736051],
 		'dep': 4,
-		'name': 'leanne'
+		'name': 'leanne',
+		'desc': 'leanne lives here'
 	},
 	{
 		'gps': [-73.696475,41.611607],
 		'dep': 5,
-		'name': 'jewel'
+		'name': 'jewel',
+		'desc': 'jewel lives here'
+	},
+	{
+		'gps': [-73.865845,41.140244],
+		'dep': 6,
+		'name': 'Kerneys cove',
+		'desc': 'Kerneys cove is a research location on the huson river near ossining ny'
 	},
 ];
 
@@ -43,7 +52,8 @@ for (var i = 0; i<deploymentLocs.length; i++) { //loop through deployments
 				stroke: new Stroke({color: '#666666', width: 1})
 			})
 		}),
-		'note': deploymentLocs[i].dep + ': ' + deploymentLocs[i].name,
+		'note': deploymentLocs[i].dep + ': ' + deploymentLocs[i].name + '<br><br>' + deploymentLocs[i].desc,
+		'name': deploymentLocs[i].name,
 		'id': deploymentLocs[i].dep
 	});
 }
@@ -103,7 +113,7 @@ map.on('pointermove', function(event) {
 			placement: 'top',
 			animation: false,
 			html: true,
-			content: feature.values_.note
+			content: feature.values_.name
 		});
 		$(el).popover('show');
 		//featureListener(event, feature.values_.note); //pass is the name of the point
@@ -112,7 +122,21 @@ map.on('pointermove', function(event) {
 });
 
 map.on('click', function(event) {
+	map.getView().setZoom(map.getView().getZoom()+1);
+	map.getView().setCenter(event.coordinate);
+    var el = infoWindow.getElement();
+	$(el).popover('destroy');
     map.forEachFeatureAtPixel(event.pixel, function(feature,layer) {
-		console.log('set session variable depid to ' + feature.values_.id);
+		var coordinate = event.coordinate;
+		infoWindow.setPosition(coordinate);
+		$(el).popover({
+			placement: 'top',
+			animation: false,
+			html: true,
+			content: feature.values_.note
+		});
+		$(el).popover('show');
+		//featureListener(event, feature.values_.note); //pass is the name of the point
+        
     });
 });
