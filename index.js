@@ -7,7 +7,7 @@ import {Point} from 'ol/geom.js';
 import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer.js';
 import {TileJSON, Vector as VectorSource} from 'ol/source.js';
 import Stamen from 'ol/source/Stamen.js';
-import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style.js';
+import {Circle as CircleStyle, Fill, Stroke, Style, Icon} from 'ol/style.js';
 import Overlay from 'ol/Overlay.js';
 
 var deploymentLocs = [
@@ -46,10 +46,13 @@ for (var i = 0; i<deploymentLocs.length; i++) { //loop through deployments
 	features[i] = new Feature({
 		'geometry': new Point(fromLonLat(deploymentLocs[i].gps)), //grab gps location and tranlate it into meters from some spot off the coast of west africa
 		'size': new Style({
-			image: new CircleStyle({
+			/*image: new CircleStyle({
 				radius: 8,
 				fill: new Fill({color: '#79AFF5'}),
 				stroke: new Stroke({color: '#666666', width: 1})
+			})*/
+			image: new Icon({
+				src: 'https://cdn.mapmarker.io/api/v1/pin?size=50&background=%235CA3E9&icon=fa-tint&color=%23FFFFFF&voffset=0&hoffset=1&'
 			})
 		}),
 		'note': deploymentLocs[i].dep + ': ' + deploymentLocs[i].name + '<br><br>' + deploymentLocs[i].desc,
