@@ -140,7 +140,7 @@ map.on('click', function(event) {
 		});
 		$(el).popover('show');
 		//featureListener(event, feature.values_.note); //pass is the name of the point
-        document.getElementById("next").innerHTML = 'See more for ' + feature.values_.name;
+        //document.getElementById("next").innerHTML = 'See more for ' + feature.values_.name;
 		document.getElementById("next").className = '';
     });
 });
